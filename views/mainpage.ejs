@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter : real world</title>
+    <link rel="stylesheet" href="/mainpage.css">
+</head>
+<body>
+     <h1>Twitter</h1>
+      <div id="d11">
+      <% for(data of database){%>
+        <br>
+        <div class="post">
+          <%if(data.username && data.post){%>  
+         <h3>Username:<%=data.username%></h3>
+         <p><%=data.post%></p>
+          <a href="/tweeter/<%=data.id%>"><button>Show tweet</button></a>
+          <a href="/tweeter/edit/<%=data.id%>"><button>Edit tweet</button></a><br><br>
+          <form method="post" action="/tweeter/delete/<%=data.id%>?_method=DELETE">
+          <button>Delete Post</button>
+        </form>
+          <%}%>
+          
+        </div> 
+      <%}%>
+      <br>
+      <form method="get" action="/tweeter/addPost">
+        <button>Add Post</button>
+      </form>
+    </div>
+</body>
+</html>
