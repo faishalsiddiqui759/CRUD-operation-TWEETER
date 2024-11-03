@@ -17,9 +17,9 @@
          <p><%=data.post%></p>
           <a href="/tweeter/<%=data.id%>"><button>Show tweet</button></a>
           <a href="/tweeter/edit/<%=data.id%>"><button>Edit tweet</button></a><br><br>
-          <form method="post" action="/tweeter/delete/<%=data.id%>?_method=DELETE">
-          <button>Delete Post</button>
-        </form>
+          <form method="POST" action="/tweeter/<%=data.id%>?_method=DELETE">
+            <button type="submit">Delete post</button>
+          </form>
           <%}%>
           
         </div> 
@@ -31,3 +31,4 @@
     </div>
 </body>
 </html>
+

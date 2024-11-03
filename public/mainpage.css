@@ -32,4 +32,5 @@ textarea{
 }
 button {
     background-color:bisque;
+    height: auto;
 }

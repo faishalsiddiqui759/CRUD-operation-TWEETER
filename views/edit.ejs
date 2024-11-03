@@ -10,9 +10,9 @@
     <h1>Edit Tweet</h1>
     <div id="d11">
         <h3>Username:<%=data.username%></h3>
-        <form method="post" action="/tweeter/<%=data.id%>?_method-=PATCH">
+        <form method="post" action="/tweeter/<%=data.id%>?_method=PATCH">
         <textarea name="post" rows="20" cols="30"><%=data.post%></textarea>
-        <button></button>
+        <button>Post</button>
         </form>
     </div>
 </body>

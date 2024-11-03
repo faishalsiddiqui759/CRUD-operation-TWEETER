@@ -10,10 +10,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended : true}));
+app.use(methodOverride("_method"));
 
-app.listen(port, ()=>{
-    console.log("app is listening");
-});
  
 let database = [
     {   id: uuidv4(),
@@ -65,7 +63,12 @@ app.patch("/tweeter/:id", (req, res)=>{
     res.redirect("/tweeter");
 });
 
-app.get("/tweeter/delete/:id", (req, res)=>{
+
+app.listen(port, ()=>{
+    console.log("app is listening");
+});
+
+app.delete("/tweeter/:id", (req, res)=>{
     let {id} = req.params;
     database = database.filter((p)=> id !== p.id);
     res.redirect("/tweeter");
