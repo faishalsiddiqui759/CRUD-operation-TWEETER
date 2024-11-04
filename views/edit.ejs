@@ -11,7 +11,7 @@
     <div id="d11">
         <h3>Username:<%=data.username%></h3>
         <form method="post" action="/tweeter/<%=data.id%>?_method=PATCH">
-        <textarea name="post" rows="20" cols="30"><%=data.post%></textarea>
+        <textarea name="post" rows="20" cols="30"><%=data.post%></textarea><br>
         <button>Post</button>
         </form>
     </div>
